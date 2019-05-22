@@ -1,0 +1,71 @@
+<section class="content-header">
+  <h1>
+    General
+    <small>Settings</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="active">Settings</li>
+  </ol>
+</section>
+<section class="content" ng-controller="HomeController">
+<div class="row">
+  <div class="col-md-12" ng-init="getsettings()">
+    <!-- general form elements -->
+    <flash-message  duration="5000" show-close="true" on-dismiss="myCallback(flash)" name="Setting-flash"></flash-message>
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Customise Your Settings</h3>
+      </div>
+      <!-- /.box-header -->
+      <!-- form start -->
+      <form novalidate role="form" ng-submit="addsetting()" name="settingForm" enctype='multipart/form-data'>
+        <div class="box-body">
+
+          <div class="form-group">
+            <label for="tax">Tax Amount (%)</label>
+            <input type="text"  name="tax" ng-model="tax"  class="form-control"  placeholder="Tax Amount" ng-pattern='/^(\d{0,2}(\.\d{1,2})?|100(\.00?)?)$/'> 
+            <div ng-if="error_tax == 'tax'" ng-messages="settingForm.tax.$error" class="error-messages ng-active">
+              <div ng-message="pattern">
+                  <i class="fa fa-times-circle"/> Maximum tax must be less than or equal to 100.
+              </div>
+            </div>          
+          </div>
+
+          <div class="form-group">
+            <label for="tax">Default Quantity (For Custom Drink)</label>
+            <input type="text" ng-maxlength="6" name="default_quantity" ng-model="default_quantity"  class="form-control"  placeholder="Tax Amount" ng-pattern='/^[0-9]{1,7}(\.[0-9]+)?$/'> 
+            <div ng-if="error_default_quantity == 'default_quantity'" ng-messages="settingForm.default_quantity.$error" class="error-messages ng-active">
+              <div ng-message="pattern">
+                  <i class="fa fa-times-circle"/> Only number is allowed.
+              </div>
+              <div ng-message="maxlength">
+                  <i class="fa fa-times-circle"/> Number must be less than or equalto 6 in length.
+              </div>
+            </div>          
+          </div>
+
+          <div class="form-group">
+            <label for="tax">Default Time To Prepare Drink (In Seconds)</label>
+            <input type="text"  ng-maxlength="6" name="default_time" ng-model="default_time"  class="form-control"  placeholder="Time (In seconds)" ng-pattern='/^\d+$/'> 
+            <p class="help-block">Note : If seconds are less than 120 then it will be rounded to 120.</p>
+            <div ng-if="error_default_time == 'default_time'" ng-messages="settingForm.default_time.$error" class="error-messages ng-active">
+              <div ng-message="pattern">
+                  <i class="fa fa-times-circle"/> Only number is allowed.
+              </div>
+              <div ng-message="maxlength">
+                  <i class="fa fa-times-circle"/> Number must be less than or equalto 6 in length.
+              </div>
+            </div>          
+          </div>
+
+        </div>
+        <div class="box-footer">
+          <a href="/dashboard" class="btn btn-default">Cancel</a>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</section

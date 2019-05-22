@@ -1,0 +1,10 @@
+{ 
+    "_id" : ObjectId("5927eafdde57b36b7cd578a4"), 
+    "userid" : ObjectId("59269f25bbe138289ca55767"), 
+    "name" : "My First Team", 
+    "description" : "My First Teams", 
+    "logo" : "file-1495788306596", 
+    "created_on" : ISODate("2017-05-26T08:17:04.743+0000"), 
+    "status" : "active", 
+    "__v" : NumberInt(0)
+}

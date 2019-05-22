@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/pkill -f /home/tilt/webapps/s_portal_app/bin/node && rm -f /home/tilt/webapps/s_portal_app/run/node.pid

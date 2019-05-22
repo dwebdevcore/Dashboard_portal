@@ -1,0 +1,5 @@
+#!/bin/sh
+/sbin/pidof /home/tilt/webapps/s_portal_app/bin/node > /dev/null 2>&1 && exit 0
+mkdir -p /home/tilt/webapps/s_portal_app/run
+nohup /home/tilt/webapps/s_portal_app/bin/node /home/tilt/webapps/s_portal_app/index.js > /dev/null 2>&1 &
+/sbin/pidof /home/tilt/webapps/s_portal_app/bin/node > /home/tilt/webapps/s_portal_app/run/node.pid

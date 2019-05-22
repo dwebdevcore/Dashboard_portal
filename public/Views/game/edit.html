@@ -1,0 +1,86 @@
+<section class="content-header">
+  <h1>
+    {{sidehead}}
+    <small ng-bind="sidecreatetxt"></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="active">Game</li>
+  </ol>
+</section>
+<section class="content" ng-controller="GameController" ng-init="getTeams()">
+<div class="row" ng-init="getGameById()">
+  <div class="col-md-12">
+    <!-- general form elements -->
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Update Game</h3>
+      </div>
+      <!-- /.box-header -->
+      <!-- form start -->
+      <form novalidate role="form" ng-submit="addTeam()" name="teamForm" enctype='multipart/form-data'>
+        <div class="box-body">
+          <div class="form-group">
+            <label for="category_name">Name</label><span class="astric">*</span>
+            <input  name="name" ng-model="name" type="text" class="form-control"  placeholder="Name" required> 
+            <div ng-if="error_name == 'name'" ng-messages="teamForm.name.$error" class="error-messages ng-active">
+              <div ng-message="required">
+                <i class="fa fa-times-circle"/> Name is required.
+              </div> 
+            </div>          
+          </div>
+
+          <div class="form-group">
+              <label for="type">Team</label><span class="astric">*</span><br/>
+                 <select style="width: 100%;"  ui-select2 required name="team" id="team"  ng-model="team">
+                   <option value="">Select Team</option>
+                   <option ng-repeat="team in teams" value="{{team._id}}">{{team.name}}</option>
+                </select>
+                 <div ng-if="error_team == 'team'" ng-messages="gameForm.team.$error" class="error-messages ng-active">
+                  <div ng-message="required">
+                    <i class="fa fa-times-circle"/> Please select team.
+                  </div> 
+                </div>
+          </div>
+         
+         <div class="form-group">
+            <label for="category_name">Status</label><br/>
+             <toggle-switch  ng-model="switchStatus" knob-label="" on-label="Active" off-label="Inactive" class="switch-success switch-small"></toggle-switch>
+             <input type="hidden" ng-model="imagename"/>
+          </div>
+
+           <div>
+                <textarea  id="editor1" ng-model="description" name="description" class="textarea" placeholder="Description" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" required></textarea>
+
+                  <div ng-if="error_description == 'description'" ng-messages="teamForm.description.$error" class="error-messages ng-active">
+                    <div ng-message="required">
+                     <i class="fa fa-times-circle"/> Description is required.
+                    </div> 
+                </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFile">Image</label><span class="astric">*</span>
+
+            <input type="file" onchange="angular.element(this).scope().fileselect()" file-model="myfile" required name="file" id="exampleInputFile" img-cropper-fileread image="cropper.sourceImage" style="margin-bottom: 3px;">
+            <div>
+              <canvas width="200" height="200" id="canvas" image-cropper image="cropper.sourceImage" cropped-image="cropper.croppedImage" crop-width="100" crop-height="100" keep-aspect="true" touch-radius="30" crop-area-bounds="bounds"></canvas>
+            </div>
+            <label for="exampleInputFile">Cropped Image</label>
+            <div ng-show="cropper.croppedImage!=null">
+                <img ng-src="{{cropper.croppedImage}}" />
+            </div>
+            <p class="help-block">You are allowed to upload png, jpg, jpeg upto 2MB.</p>
+          </div>
+          <div ng-if="error_file == 'myfile'" class="error-messages ng-active">
+                <i class="fa fa-times-circle"/> {{fileerror}}
+          </div>
+        </div>
+        <div class="box-footer">
+          <a href="/game" class="btn btn-default">Cancel</a>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</section

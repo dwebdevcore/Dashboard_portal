@@ -1,0 +1,29 @@
+<section class="content-header"  ng-controller="TeamController">
+  <h1>
+    {{sidehead}}
+    <small ng-bind="sidetxt"></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="active">Team</li>
+  </ol>
+</section>
+
+<section class="content">
+  <div class="row" ng-init="getTeam()">
+    <div class="col-xs-12"> 
+      <flash-message  duration="5000" show-close="true" on-dismiss="myCallback(flash)" name="Team-flash"></flash-message>
+      <div class="box">
+        <div class="box-header">
+          <h3 class="box-title">List of Teams</h3>
+          <div class="box-tools" ng-if="showadd != 'show'">
+              <a href="/team/create" style="margin-top: -2px;" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Add Team</a>
+          </div>
+        </div>
+        <div class="box-body table-responsive no-padding">
+          <table  id="datatable" class="table table-bordered table-hover dataTable"></table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section

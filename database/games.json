@@ -1,0 +1,11 @@
+{ 
+    "_id" : ObjectId("592812deb503697dfa32e622"), 
+    "userid" : ObjectId("59269f25bbe138289ca55767"), 
+    "teamid" : ObjectId("5927eafdde57b36b7cd578a4"), 
+    "name" : "Cricket", 
+    "description" : "Cricket", 
+    "logo" : "file-1495798493643", 
+    "created_on" : ISODate("2017-05-26T10:32:27.914+0000"), 
+    "status" : "active", 
+    "__v" : NumberInt(0)
+}

@@ -1,0 +1,19 @@
+{ 
+    "_id" : ObjectId("59269f25bbe138289ca55767"), 
+    "created_on" : ISODate("2017-05-25T09:08:53.640+0000"), 
+    "device_type" : "", 
+    "otp" : "124687", 
+    "status" : "active", 
+    "is_verified" : "yes", 
+    "user_type" : "client", 
+    "password" : "sha1$dadce18e$1$37b37c17bbd9d6b5f3a27377510b93ce944f2efd", 
+    "linked_id" : "", 
+    "instagram_id" : "", 
+    "twitter_id" : "", 
+    "gplus_id" : "", 
+    "fb_id" : "", 
+    "image" : "", 
+    "email" : "shivanshu.misra9@gmail.com", 
+    "name" : "", 
+    "__v" : NumberInt(0)
+}

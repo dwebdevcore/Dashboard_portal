@@ -1,0 +1,38 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shivanshu",
+  "license": "ISC",
+  "dependencies": {
+    "angularjs-datetime-picker": "^0.1.16",
+    "async": "^2.4.1",
+    "async-waterfall": "^0.1.5",
+    "base64-img": "^1.0.3",
+    "body-parser": "^1.16.0",
+    "captchapng": "0.0.1",
+    "cluster": "^0.7.7",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.14.1",
+    "express-session": "^1.15.1",
+    "fs": "0.0.1-security",
+    "jwt-simple": "^0.5.1",
+    "mongoose": "^4.8.2",
+    "multer": "^1.3.0",
+    "nodemailer": "^3.1.3",
+    "nodemailer-smtp-transport": "^2.7.2",
+    "passcode": "^1.0.2",
+    "password-hash": "^1.2.2",
+    "path": "^0.12.7",
+    "request": "^2.81.0",
+    "simple-encryptor": "^1.1.0",
+    "underscore": "^1.8.3",
+    "validator": "^6.2.1"
+  }
+}
